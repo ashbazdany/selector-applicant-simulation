@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selector-Applicant Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Selector-Applicant Simulation</h1>
+
+  <div class="section">
+    <h2>Add Applicant</h2>
+    <input type="text" id="applicantName" placeholder="Applicant name">
+    <input type="text" id="applicantPrefs" placeholder="Preferences (comma separated, e.g. CompanyA,CompanyB)">
+    <button onclick="addApplicant()">Add Applicant</button>
+  </div>
+
+  <div class="section">
+    <h2>Add Selector</h2>
+    <input type="text" id="selectorName" placeholder="Selector name">
+    <input type="text" id="selectorPrefs" placeholder="Preferences (comma separated, e.g. Alice,Bob)">
+    <input type="number" id="selectorCapacity" placeholder="Capacity" value="1" min="1">
+    <button onclick="addSelector()">Add Selector</button>
+  </div>
+
+  <div class="section">
+    <h2>Applicants</h2>
+    <ul id="applicantList"></ul>
+  </div>
+
+  <div class="section">
+    <h2>Selectors</h2>
+    <ul id="selectorList"></ul>
+  </div>
+
+  <div class="section">
+    <button onclick="runMatching()">Run Matching</button>
+    <h2>Results</h2>
+    <ul id="resultsList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
