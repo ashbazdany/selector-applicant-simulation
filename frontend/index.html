@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🎓 Student Management System</h1>
+    <p>Create, view, update, and delete student records</p>
+  </header>
+
+  <main class="container">
+    <!-- Alert / message banner -->
+    <div id="alertBox" class="alert hidden"></div>
+
+    <!-- Form for Create / Update -->
+    <section class="card">
+      <h2 id="formTitle">Add New Student</h2>
+      <form id="studentForm" novalidate>
+        <input type="hidden" id="studentId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" placeholder="e.g. Priya Sharma" required />
+            <span class="field-error" id="err-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="e.g. priya@example.com" required />
+            <span class="field-error" id="err-email"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="course">Course *</label>
+            <input type="text" id="course" placeholder="e.g. B.Tech CSE" required />
+            <span class="field-error" id="err-course"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Year *</label>
+            <select id="year" required>
+              <option value="">Select year</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <span class="field-error" id="err-year"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="Optional" />
+            <span class="field-error" id="err-phone"></span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="btn btn-primary">Add Student</button>
+          <button type="button" id="cancelBtn" class="btn btn-secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- List / Search -->
+    <section class="card">
+      <div class="list-header">
+        <h2>Student Records</h2>
+        <input type="text" id="searchInput" placeholder="Search by name or email..." />
+      </div>
+
+      <div class="table-wrapper">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsBody">
+            <!-- rows injected by script.js -->
+          </tbody>
+        </table>
+        <p id="emptyState" class="empty-state hidden">No student records found.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>CRUD Demo &mdash; HTML/CSS/JS frontend, Express + SQLite REST API backend</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
